@@ -1,10 +1,7 @@
 package com.projects.SoundWallet.entities;
 
 import com.projects.SoundWallet.enums.Status;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -47,6 +44,10 @@ public class User implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedDate;
 
+    User(){
+        this.createdDate= new Date();
+        this.updatedDate = new Date();
+    }
     @PrePersist
     private void setCreatedAt(){
         createdDate = new Date();
