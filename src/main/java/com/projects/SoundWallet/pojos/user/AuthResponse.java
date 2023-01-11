@@ -4,7 +4,7 @@ import com.projects.SoundWallet.entities.User;
 import lombok.Data;
 
 @Data
-public class UserAuthResponse {
+public class AuthResponse {
     private String token;
     private User user;
 }

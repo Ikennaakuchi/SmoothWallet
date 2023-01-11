@@ -3,7 +3,7 @@ package com.projects.SoundWallet.pojos.user;
 import lombok.Data;
 
 @Data
-public class UserSignUpRequest {
+public class SignUpRequest {
 
     private String name;
     private String emailAddress;
