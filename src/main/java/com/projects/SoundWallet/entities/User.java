@@ -39,6 +39,9 @@ public class User implements Serializable {
 
     @Column(nullable = false, length = 50)
     private String password;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastLoginDate;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
     @Temporal(TemporalType.TIMESTAMP)

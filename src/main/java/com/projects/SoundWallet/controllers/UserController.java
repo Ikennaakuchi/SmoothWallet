@@ -1,6 +1,7 @@
 package com.projects.SoundWallet.controllers;
 
 import com.projects.SoundWallet.pojos.ApiResponse;
+import com.projects.SoundWallet.pojos.user.AuthRequest;
 import com.projects.SoundWallet.pojos.user.SignUpRequest;
 import com.projects.SoundWallet.services.UserService;
 import com.projects.SoundWallet.util.ResponseProvider;
@@ -18,8 +19,13 @@ public class UserController {
     private final UserService userService;
     private final ResponseProvider responseProvider;
 
-    @PostMapping("signup")
-    public ResponseEntity<ApiResponse<Object>> signUp(@RequestBody SignUpRequest request){
-        return responseProvider.success( userService.signUp(request));
+    @PostMapping("/signup")
+    public ResponseEntity<ApiResponse<Object>> signUp(@RequestBody SignUpRequest request) {
+        return responseProvider.success(userService.signUp(request));
+    }
+
+    @PostMapping("/auth")
+    public ResponseEntity<ApiResponse<Object>> authenticateUser(@RequestBody AuthRequest request) {
+        return responseProvider.success(userService.signIn(request));
     }
 }
